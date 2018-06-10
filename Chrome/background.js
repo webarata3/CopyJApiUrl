@@ -13,6 +13,11 @@ chrome.browserAction.onClicked.addListener(tab => {
     if (bracketIndex !== -1) {
       displayUrl = displayUrl.substr(0, bracketIndex);
     }
+    const hyphenIndex = displayUrl.indexOf('-');
+    console.log(hyphenIndex);
+    if (hyphenIndex !== -1) {
+      displayUrl = displayUrl.substr(0, hyphenIndex);
+    }
   }
 
   blogLink = `<code><a href="${url}">${displayUrl}</a></code>`;
